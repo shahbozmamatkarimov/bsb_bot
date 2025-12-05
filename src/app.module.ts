@@ -37,7 +37,7 @@ import { Bsb } from './bsb/models/bsb.model';
     TelegrafModule.forRootAsync({
       botName: BOT_NAME,
       useFactory: () => {
-        return process.env.NODE_ENV !== 'production' ? {
+        return process.env.NODE_ENV === 'production' ? {
           token: process.env.BOT_TOKEN,
           includes: [BotModule],
           // launchOptions: {
@@ -51,7 +51,7 @@ import { Bsb } from './bsb/models/bsb.model';
           // includes: [BotModule],
           launchOptions: {
             webhook: {
-              domain: 'https://bsb-back-end.vercel.app',
+              domain: 'https://bsb-bot.vercel.app',
               hookPath: '/api/webhook/bot',
             }
           }
