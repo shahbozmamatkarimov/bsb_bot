@@ -11,10 +11,10 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
   try {
-    const app = await NestFactory.create<NestExpressApplication>(AppModule);
+    // const app = await NestFactory.create<NestExpressApplication>(AppModule);
     // ❗️Raw body only for Telegram webhook
-    app.use('/api/webhook/bot', bodyParser.raw({ type: 'application/json' }));
-    // const app = await NestFactory.create<NestExpressApplication>(AppModule, { rawBody: true });
+    // app.use('/api/webhook/bot', bodyParser.raw({ type: 'application/json' }));
+    const app = await NestFactory.create<NestExpressApplication>(AppModule, { rawBody: true });
     // Webhook uchun raw body qo‘shish
     // app.use(
     //   '/api/webhook',
