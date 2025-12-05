@@ -46,7 +46,7 @@ import { Bsb } from './bsb/models/bsb.model';
           //     hookPath: '/api/webhook',
           //   }
           // }
-        } : {
+        } : { 
           token: process.env.BOT_TOKEN,
           // includes: [BotModule],
           launchOptions: {
