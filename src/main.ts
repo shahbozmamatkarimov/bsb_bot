@@ -28,18 +28,18 @@ async function bootstrap() {
     app.use('/swagger-ui', express.static(join(__dirname, '../node_modules/swagger-ui-dist')));
 
     const PORT = process.env.PORT || 4200;
-    // app.enableCors();
-    app.enableCors({
-      origin: [
-        'https://bsb-front-nu.vercel.app',
-        'http://localhost:3000'
-      ],
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-      allowedHeaders: 'Content-Type, Authorization',
-      credentials: true,
-      preflightContinue: false,
-      optionsSuccessStatus: 204,
-    });
+    app.enableCors();
+    // app.enableCors({
+    //   origin: [
+    //     'https://bsb-front-nu.vercel.app',
+    //     'http://localhost:3000'
+    //   ],
+    //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    //   allowedHeaders: 'Content-Type, Authorization',
+    //   credentials: true,
+    //   preflightContinue: false,
+    //   optionsSuccessStatus: 204,
+    // });
 
     // CORS sozlash
     // app.enableCors({
