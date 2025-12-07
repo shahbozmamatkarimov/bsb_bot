@@ -1,9 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsBoolean,
-  IsEnum,
   IsNotEmpty,
-  IsNumber,
   IsOptional,
   IsPhoneNumber,
   IsString,
@@ -15,8 +13,8 @@ export class RegisterUserDto {
     description: 'Bot id',
   })
   @IsNotEmpty()
-  @IsNumber()
-  bot_id: number;
+  @IsString()
+  bot_id: string;
 
   @ApiProperty({
     example: 'John Doe',
@@ -32,7 +30,7 @@ export class RegisterUserDto {
   })
   @IsOptional()
   @IsBoolean()
-  status?: boolean; 
+  status?: boolean;
 
   @ApiProperty({
     example: '+998991422303',

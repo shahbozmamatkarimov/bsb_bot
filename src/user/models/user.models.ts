@@ -7,7 +7,7 @@ import {
 } from 'sequelize-typescript';
 
 interface UserAttributes {
-  bot_id: number;
+  bot_id: string;
   full_name: string;
   username: string,
   phone: string;
@@ -37,9 +37,9 @@ export class User extends Model<User, UserAttributes> {
   id: number;
 
   @Column({
-    type: DataType.INTEGER,
+    type: DataType.BIGINT,
   })
-  bot_id: number;
+  bot_id: string;
 
   @Column({
     type: DataType.STRING,

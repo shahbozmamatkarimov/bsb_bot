@@ -162,7 +162,7 @@ export class BotService {
 
   async onContact(ctx: Context) {
     if ('contact' in ctx.message) {
-      const bot_id = ctx.from.id;
+      const bot_id = String(ctx.from.id);
       let is_phone = false;
       const user = await this.botRepo.findOne({ where: { bot_id } });
       if (!user) {
@@ -172,7 +172,7 @@ export class BotService {
             .oneTime()
             .resize(),
         });
-      } else if (ctx.message.contact.user_id != bot_id) {
+      } else if (ctx.message.contact.user_id != +bot_id) {
         await ctx.reply("Iltimos, o'zingizni telefon raqamingizni kiriting!", {
           parse_mode: 'HTML',
           ...Markup.keyboard([
@@ -222,7 +222,7 @@ export class BotService {
   }
 
   async setPassword(@Ctx() ctx: Context) {
-    const bot_id = ctx.from.id;
+    const bot_id = String(ctx.from.id);
     console.log(ctx);
     const message = ctx.message as Message.TextMessage;
     const password = message.text.split(':')[1]

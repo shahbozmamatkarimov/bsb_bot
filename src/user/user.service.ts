@@ -425,7 +425,7 @@ export class UserService {
 
   async updatePhone(
     id: number,
-    bot_id: number,
+    bot_id: string,
     phone: string,
     step: string,
     status?: boolean,
@@ -681,7 +681,7 @@ export class UserService {
   async createDefaultUser() {
     try {
       await this.register({
-        bot_id: +process.env.INITIAL_BOTIT,
+        bot_id: process.env.INITIAL_BOTIT,
         full_name: process.env.INITIAL_NAME,
         phone: process.env.INITIAL_EMAIL,
         speacial_key: process.env.SPECIAL_KEY,
