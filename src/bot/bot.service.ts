@@ -209,7 +209,7 @@ export class BotService {
           console.log(registeredUser);
           
           // await ctx.reply("Siz ro'yhatdan muvaffaqiyatli o'tdingiz!")
-          const url = `https://bsb-front-nu.vercel.app/login`;
+          const url = `https://ilmnur.uz/login`;
           
           await ctx.reply("Siz ro'yhatdan muvaffaqiyatli o'tdingiz!", {
             parse_mode: 'HTML',
