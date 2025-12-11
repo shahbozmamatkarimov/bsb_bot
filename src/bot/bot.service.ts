@@ -192,7 +192,7 @@ export class BotService {
         if (user.phone) {
           // await this.userService.updatePhone(user.phone, phone);
         }
-        const registeredUser: any = await this.userService.register({ full_name: user.name + ' ' + user.surname, phone, bot_id });
+        const registeredUser: any = await this.userService.register({ full_name: user.name + ' ' + user.surname, username: '@' + user.username, phone, bot_id });
         const bot_user = await this.botRepo.update(
           { phone, status: true },
           {
@@ -207,10 +207,10 @@ export class BotService {
           });
         } else {
           console.log(registeredUser);
-          
+
           // await ctx.reply("Siz ro'yhatdan muvaffaqiyatli o'tdingiz!")
           const url = `https://ilmnur.uz/login`;
-          
+
           await ctx.reply("Siz ro'yhatdan muvaffaqiyatli o'tdingiz!", {
             parse_mode: 'HTML',
             ...Markup.removeKeyboard(),
