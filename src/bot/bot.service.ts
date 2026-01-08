@@ -230,7 +230,7 @@ export class BotService {
     let bot_user: any;
     if (!user?.user_id) {
       console.log(user);
-      bot_user = await this.userService.register({ full_name: user.name + ' ' + user.surname, phone: user.phone, bot_id });
+      bot_user = await this.userService.register({ full_name: user.name + ' ' + user.surname, username: '@'+ user.username, phone: user.phone, bot_id });
       console.log(bot_user);
       console.log(bot_user?.data?.user.get('id'));
       await this.botRepo.update({ user_id: bot_user?.data?.user.get('id') }, {

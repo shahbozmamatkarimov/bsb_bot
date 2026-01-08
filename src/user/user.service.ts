@@ -167,7 +167,7 @@ export class UserService {
       // await this.mailService.sendUserConfirmation(updateuser[1][0], activation_link);
       // await this.botService.sendOtp(979201852, '4654')
 
-      await this.otpService.sendOTP({ phone })
+      await this.otpService.sendOTP({ bot_id: +user.bot_id, phone })
       return {
         statusCode: HttpStatus.OK,
         message: 'Verification code sended successfully',
@@ -176,7 +176,7 @@ export class UserService {
     } catch (error) {
       console.log(error);
 
-      throw new BadRequestException("Foydalanuvchi topilmadi");
+      throw new BadRequestException("Foydalanuvchi topilmadi: bot orqali ro'yhatdan o'ting");
     }
   }
 
