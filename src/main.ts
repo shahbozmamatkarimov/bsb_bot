@@ -32,6 +32,7 @@ async function bootstrap() {
     app.enableCors({
       origin: [
         'https://ilmnur.uz',
+        'https://bsbchsb.uz',
         'https://bsb-front-nu.vercel.app',
         'http://localhost:3000',
         'https://bsb-bot.vercel.app'
