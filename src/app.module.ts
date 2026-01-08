@@ -123,7 +123,7 @@ export class AppModule implements OnApplicationBootstrap {
   ) { }
 
   async onApplicationBootstrap() {
-    await this.userService.createDefaultUser();
+    // await this.userService.createDefaultUser();
     // ConsoleUtils.startAutoClear();
   }
 
