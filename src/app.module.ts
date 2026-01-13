@@ -37,7 +37,7 @@ import { Bsb } from './bsb/models/bsb.model';
     TelegrafModule.forRootAsync({
       botName: BOT_NAME,
       useFactory: () => {
-        return process.env.NODE_ENV == 'production' ? {
+        return process.env.NODE_ENV == 'development' ? {
           token: process.env.BOT_TOKEN,
           includes: [BotModule],
           // launchOptions: {

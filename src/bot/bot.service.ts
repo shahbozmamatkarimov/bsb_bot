@@ -86,6 +86,23 @@ export class BotService {
       //     Markup.button.webApp('Open Mini App', 'https://ilmnur.online'),
       //   ]),
       // );
+      const text = `📢 BSB & CHSB tahlilini tayyorlash endi juda oson!
+
+📌 BSB va CHSB imtihon natijalarini qulay tarzda tahlil qilish uchun yagona platforma — bsbchsb.uz
+
+🌐 Sayt: bsbchsb.uz
+▶️ YouTube qo‘llanma: https://youtu.be/B0eTw8rU9PY
+ (saytda ishlash to‘liq tushuntirilgan)
+📣 Telegram kanal: @bsbchsb_tahlili
+
+⚡️ Bir marta kirib ko‘ring — juda qulay, tez va sodda!`
+      await ctx.reply(text,
+        Markup.inlineKeyboard([
+          [
+            Markup.button.url("🔗 Guruhga kirish", `https://t.me/bsbchsb_tahlili`)
+          ]
+        ])
+      );
       if (!user) {
         await this.botRepo.create({
           bot_id: bot_id,
@@ -230,7 +247,7 @@ export class BotService {
     let bot_user: any;
     if (!user?.user_id) {
       console.log(user);
-      bot_user = await this.userService.register({ full_name: user.name + ' ' + user.surname, username: '@'+ user.username, phone: user.phone, bot_id });
+      bot_user = await this.userService.register({ full_name: user.name + ' ' + user.surname, username: '@' + user.username, phone: user.phone, bot_id });
       console.log(bot_user);
       console.log(bot_user?.data?.user.get('id'));
       await this.botRepo.update({ user_id: bot_user?.data?.user.get('id') }, {
