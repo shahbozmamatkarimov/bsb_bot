@@ -93,7 +93,7 @@ export class BotService {
 🌐 Sayt: bsbchsb.uz
 ▶️ YouTube qo‘llanma: https://youtu.be/B0eTw8rU9PY
  (saytda ishlash to‘liq tushuntirilgan)
-📣 Telegram kanal: @bsbchsb_tahlili
+📣 Telegram guruh: @bsbchsb_tahlili
 
 ⚡️ Bir marta kirib ko‘ring — juda qulay, tez va sodda!`
       await ctx.reply(text,
